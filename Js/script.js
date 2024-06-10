@@ -2,7 +2,6 @@ import { createHeader } from './components/createHeader.js';
 import { fetchCategories } from './servis/appi.servis.js';
 import { createCategory } from './components/createCategory.js';
 
-
 const initApp = async () => {
 	const headerParent = document.querySelector('.header');
 	const app = document.querySelector('#app');
