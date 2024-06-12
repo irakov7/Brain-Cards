@@ -9,25 +9,26 @@ const initApp = async () => {
 	const headerObj = createHeader(headerParent);
 	const categoryObj = createCategory(app);
 
-	const categories = await fetchCategories();
-	if (categories.error) {
-		const errorText = createElement('p', {
-			className: 'server-error',
-			textContent: 'Ошибка сервера'
-		});
-		app.append(errorText);
-		return;
-	}
-	
+	const returnIndex = async e => {
+		e?.preventDefault();
+		const categories = await fetchCategories();
+		if (categories.error) {
+			const errorText = createElement('p', {
+				className: 'server-error',
+				textContent: 'Ошибка сервера'
+			});
+			app.append(errorText);
+			return;
+		}
+		categoryObj.mount(categories);
+	};
 
-	const returnIndex = e => {
-		e.preventDefault();
-		headerObj.updateHeaderTitle('Категории');
-	}
+	returnIndex();
 
 	headerObj.headerLogoLink.addEventListener('click', returnIndex);
 
 	headerObj.headerBtn.addEventListener('click', () => {
+		categoryObj.unmount();
 		headerObj.updateHeaderTitle('Новая категория');
 	});
 };
