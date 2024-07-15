@@ -31,18 +31,18 @@ export const createCategory = (app) => {
 			});
 			const countParis = createElement('span', {
 				className: 'category__pairs',
-				textContent: declOfNum(data.length, ['пара', 'пары', 'пар']),
+				textContent: declOfNum(data.length, ['pair', 'pairs', 'pairs']),
 			});
 
 		btnCard.append(titleText, countParis);
 
 		const btnEdit = createElement('button', {
 			className: 'category__btn category__edit',
-			ariaLabel: 'редактировать',
+			ariaLabel: 'edit',
 		});
 		const btnDel = createElement('button', {
 			className: 'category__btn category__del',
-			ariaLabel: 'удалить',
+			ariaLabel: 'delete',
 		});
 		item.append(btnCard, btnEdit, btnDel);
 

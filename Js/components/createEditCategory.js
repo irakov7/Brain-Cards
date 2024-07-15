@@ -1,6 +1,6 @@
 import { createElement } from '../helper/createElement.js';
 
-const TITLE = 'введите название категории';
+const TITLE = 'Enter the category name';
 
 export const createEditCategory = (app) => {
 	const editCategory = createElement('section', {
@@ -14,7 +14,7 @@ export const createEditCategory = (app) => {
 	const title = createElement('h2', {
 		className: 'edit__title',
 		contentEditable: 'true',
-		title: 'Можно редактировать',
+		title: 'Can edit',
 	});
 	
 	const table = createElement('table', {
@@ -43,16 +43,16 @@ export const createEditCategory = (app) => {
 
 		const btnAddRow = createElement('button', {
 			className: 'edit__btn edit__add-row',
-			textContent:'Добавить пару',
+			textContent:'Add a pair',
 		});
 		const btnSave = createElement('button', {
 			className: 'edit__btn edit__save',
-			textContent: 'Сохранить категорию',
+			textContent: 'Save the category',
 		});
 
 		const btnCancel = createElement('button', {
 			className: 'edit__btn edit__cancel',
-			textContent: 'Отмена',
+			textContent: 'Cancel',
 		});
 
 	editCategory.append(container);
@@ -84,7 +84,7 @@ export const createEditCategory = (app) => {
 		});
 
 		delRow.addEventListener('click', () => {
-			if (confirm('Вы уверены что хотите удалить строку?')) {
+			if (confirm('Are you sure you want to delete the row?')) {
 				tr.remove();
 			}
 		});

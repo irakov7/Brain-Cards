@@ -11,7 +11,7 @@ export const createPairs = (app) => {
 		});
 			const buttonReturn = createElement('button', {
 				className: 'card__return',
-				ariaLabel: 'Возврат к категориям',
+				ariaLabel: 'Return to categories',
 			});
 			const buttonCard = createElement('button', {
 				className: 'card__item',
@@ -40,7 +40,7 @@ export const createPairs = (app) => {
 				setTimeout(() => { 
 					buttonCard.index += 1;
 					if (buttonCard.index === dataCards.length) {
-						showAlert('Вернемся к категориям');
+						showAlert('Let`s return to categories');
 						front.textContent = 'the end';
 						
 						setTimeout(() => {

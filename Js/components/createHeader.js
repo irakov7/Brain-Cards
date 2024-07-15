@@ -15,19 +15,19 @@ export const createHeader = (parent) => {
 	const logo = createElement('img', {
 		src: 'img/logo.svg',
 		className: 'header__logo',
-		alt: 'Лого сервиса Brain Cards',
+		alt: 'Brain Cards service logo',
 	});
 
 	headerLogoLink.append(logo);
 
 	const headerTitle = createElement('h2', {
 		className: 'header__subtitle',
-		textContent: 'Категории',
+		textContent: 'Categories',
 	});
 
 	const headerBtn = createElement('button', {
 		className: 'header__btn',
-		textContent: 'Добавить категорию',
+		textContent: 'Add category',
 	});
 
 	container.append(headerLogoLink, headerTitle, headerBtn);
